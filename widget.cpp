@@ -15,7 +15,7 @@ Widget::~Widget()
     delete ui;
 }
 void Widget::anySlot(){
-    ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget->setCurrentIndex(2);
 }
 
 void Widget::on_pushButton_clicked()
