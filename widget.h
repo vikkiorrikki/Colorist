@@ -9,6 +9,7 @@
 #include <QString>
 #include "toolsbar.h"
 #include "paintscene.h"
+#include <QResizeEvent>
 namespace Ui {
 class Widget;
 }
@@ -19,6 +20,7 @@ class Widget : public QWidget
 
 public:
     explicit Widget(QWidget *parent = 0);
+    void resizeEvent(QResizeEvent *event);
     ~Widget();
 
 private slots:

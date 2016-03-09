@@ -7,30 +7,38 @@ Widget::Widget(QWidget *parent) :
 {
 
     ui->setupUi(this);
-    scene = new paintScene(ui->graphicsView_2);
-    tool = new ToolsBar();
-    QString filename = qApp->applicationDirPath()+"/minion_1.jpg";
-    scene->setBrush(tool);
-    scene->addPixmap(QPixmap(qApp->applicationDirPath()+"/2.PNG"));
-    qDebug()<<filename;
-    QGraphicsScene *test = new QGraphicsScene(ui->graphicsView_2);
-    test->addPixmap(QPixmap(filename));
+    ui->graphicsView_2->setAlignment(Qt::AlignTop | Qt::AlignLeft);
 
-    ui->graphicsView_2->setScene(test);
-   // ui->graphicsView_2->setScene(scene);
+    scene = new paintScene(ui->graphicsView_2->rect(), ui->graphicsView_2);
+    tool = new ToolsBar();
+    scene->setBrush(tool);
+    QGraphicsScene *leftScene = new QGraphicsScene(ui->graphicsView);
+    ui->graphicsView->setScene(leftScene);
+
+    ui->graphicsView_2->setScene(scene);
 
     connect(ui->btnColor, SIGNAL(clicked()),
             this, SLOT(selectColor()));
-    //connect(ui->chckRuber, SIGNAL(clicked(bool)),
-      //      tool, SLOT(selectRuber(bool)));
     connect(ui->cmbWidth, SIGNAL(currentIndexChanged(int)),
             tool, SLOT(changeWidth(int)));
     connect(ui->btnSetBrush, SIGNAL(clicked()),
             tool, SLOT(setBrush()));
     connect(ui->btnSetRuber, SIGNAL(clicked()),
             tool, SLOT(setRuber()));
-}
 
+}
+void Widget:: resizeEvent(QResizeEvent *event)
+{
+    ui->graphicsView->scene()->setForegroundBrush(
+                QPixmap(qApp->applicationDirPath()+"/min-rdy.jpg").scaled(
+                ui->graphicsView->geometry().width(),
+                ui->graphicsView->geometry().height(), Qt::IgnoreAspectRatio));
+
+    scene->setForegroundBrush(
+                QPixmap(qApp->applicationDirPath()+"/55455.png").scaled(
+                ui->graphicsView_2->geometry().width(),
+                ui->graphicsView_2->geometry().height(), Qt::IgnoreAspectRatio));
+}
 Widget::~Widget()
 {
     delete ui;
