@@ -16,298 +16,316 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
-  <widget class="QStackedWidget" name="stackedWidget">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>941</width>
-     <height>581</height>
-    </rect>
-   </property>
-   <property name="currentIndex">
-    <number>1</number>
-   </property>
-   <widget class="QWidget" name="page_4">
-    <widget class="QRadioButton" name="rdBtnTheme_1">
-     <property name="geometry">
-      <rect>
-       <x>390</x>
-       <y>110</y>
-       <width>211</width>
-       <height>111</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string>Тема 1</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="rdBtnTheme_3">
-     <property name="geometry">
-      <rect>
-       <x>390</x>
-       <y>270</y>
-       <width>211</width>
-       <height>111</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Тема 2</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="rdBtnTheme_2">
-     <property name="geometry">
-      <rect>
-       <x>640</x>
-       <y>110</y>
-       <width>211</width>
-       <height>111</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Тема 3</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="rdBtnTheme_4">
-     <property name="geometry">
-      <rect>
-       <x>640</x>
-       <y>270</y>
-       <width>211</width>
-       <height>111</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Тема 4</string>
-     </property>
-    </widget>
-    <widget class="QSlider" name="sldDificult">
-     <property name="geometry">
-      <rect>
-       <x>70</x>
-       <y>160</y>
-       <width>22</width>
-       <height>160</height>
-      </rect>
-     </property>
-     <property name="maximum">
+  <layout class="QHBoxLayout" name="horizontalLayout_3">
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
       <number>2</number>
      </property>
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>150</y>
-       <width>61</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>- Высокая</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_2">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>230</y>
-       <width>61</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>- Средняя</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>300</y>
-       <width>61</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>- Легкая</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="btnStart">
-     <property name="geometry">
-      <rect>
-       <x>780</x>
-       <y>460</y>
-       <width>101</width>
-       <height>51</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Go</string>
-     </property>
-    </widget>
-    <widget class="QWidget" name="">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
-       <y>20</y>
-       <width>761</width>
-       <height>71</height>
-      </rect>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="label_8">
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Сложность</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="label_9">
-        <property name="font">
-         <font>
-          <pointsize>14</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Тема</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="page_3">
-    <widget class="QPushButton" name="pushButton">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>270</y>
-       <width>51</width>
-       <height>31</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>20</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>GO</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QWidget" name="page">
-    <widget class="QGraphicsView" name="graphicsView">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>80</y>
-       <width>451</width>
-       <height>401</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QGraphicsView" name="graphicsView_2">
-     <property name="geometry">
-      <rect>
-       <x>480</x>
-       <y>80</y>
-       <width>451</width>
-       <height>401</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QGroupBox" name="groupBox">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>490</y>
-       <width>451</width>
-       <height>80</height>
-      </rect>
-     </property>
-     <property name="title">
-      <string>Панель инструментов</string>
-     </property>
-     <widget class="QPushButton" name="pushButton_2">
-      <property name="geometry">
-       <rect>
-        <x>360</x>
-        <y>20</y>
-        <width>61</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
+     <widget class="QWidget" name="page_4">
+      <widget class="QRadioButton" name="rdBtnTheme_1">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>110</y>
+         <width>211</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Тема 1</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rdBtnTheme_3">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>270</y>
+         <width>211</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Тема 2</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rdBtnTheme_2">
+       <property name="geometry">
+        <rect>
+         <x>640</x>
+         <y>110</y>
+         <width>211</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Тема 3</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="rdBtnTheme_4">
+       <property name="geometry">
+        <rect>
+         <x>640</x>
+         <y>270</y>
+         <width>211</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Тема 4</string>
+       </property>
+      </widget>
+      <widget class="QSlider" name="sldDificult">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>160</y>
+         <width>22</width>
+         <height>160</height>
+        </rect>
+       </property>
+       <property name="maximum">
+        <number>2</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>150</y>
+         <width>61</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>- Высокая</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>230</y>
+         <width>61</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>- Средняя</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>300</y>
+         <width>61</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>- Легкая</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btnStart">
+       <property name="geometry">
+        <rect>
+         <x>780</x>
+         <y>460</y>
+         <width>101</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Go</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>20</y>
+         <width>761</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label_8">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Сложность</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_9">
+          <property name="font">
+           <font>
+            <pointsize>14</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Тема</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
-     <widget class="Line" name="line">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>30</y>
-        <width>118</width>
-        <height>3</height>
-       </rect>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
+     <widget class="QWidget" name="page_3">
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>420</x>
+         <y>270</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>GO</string>
+       </property>
+      </widget>
      </widget>
-     <widget class="Line" name="line_2">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>50</y>
-        <width>118</width>
-        <height>3</height>
-       </rect>
-      </property>
-      <property name="lineWidth">
-       <number>10</number>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
+     <widget class="QWidget" name="page">
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="title">
+          <string>Панель инструментов</string>
+         </property>
+         <widget class="QPushButton" name="btnColor">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>180</y>
+            <width>61</width>
+            <height>51</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="cmbWidth">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>30</y>
+            <width>91</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>1 толщина</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2 толщина</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>3 толщина</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QPushButton" name="btnSetBrush">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>110</y>
+            <width>61</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Кисть</string>
+          </property>
+         </widget>
+         <widget class="QPushButton" name="btnSetRuber">
+          <property name="geometry">
+           <rect>
+            <x>70</x>
+            <y>110</y>
+            <width>61</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Ластик</string>
+          </property>
+         </widget>
+         <zorder>cmbWidth</zorder>
+         <zorder>btnColor</zorder>
+         <zorder>btnSetBrush</zorder>
+         <zorder>btnSetRuber</zorder>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGraphicsView" name="graphicsView">
+         <property name="sceneRect">
+          <rectf>
+           <x>0.000000000000000</x>
+           <y>0.000000000000000</y>
+           <width>250.000000000000000</width>
+           <height>300.000000000000000</height>
+          </rectf>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGraphicsView" name="graphicsView_2">
+         <property name="interactive">
+          <bool>true</bool>
+         </property>
+         <property name="sceneRect">
+          <rectf>
+           <x>0.000000000000000</x>
+           <y>0.000000000000000</y>
+           <width>250.000000000000000</width>
+           <height>300.000000000000000</height>
+          </rectf>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
-     <widget class="Line" name="line_3">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>70</y>
-        <width>118</width>
-        <height>3</height>
-       </rect>
-      </property>
-      <property name="lineWidth">
-       <number>20</number>
-      </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-     </widget>
+     <widget class="QWidget" name="page_2"/>
     </widget>
-   </widget>
-   <widget class="QWidget" name="page_2"/>
-  </widget>
+   </item>
+  </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
