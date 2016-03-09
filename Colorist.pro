@@ -13,8 +13,15 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        widget.cpp
+        widget.cpp \
+    toolsbar.cpp \
+    paintscene.cpp
 
-HEADERS  += widget.h
+HEADERS  += widget.h \
+    toolsbar.h \
+    paintscene.h
 
 FORMS    += widget.ui
+
+RESOURCES += \
+    test.qrc
