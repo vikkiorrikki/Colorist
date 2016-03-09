@@ -22,7 +22,16 @@ void ToolsBar:: changeWidth(int index)
     qDebug()<<"width changed to"<< currentWidth;
 }
 
-void ToolsBar:: selectRuber(bool checked)
+void ToolsBar:: setBrush()
+{
+    isRuber = false;
+}
+
+void ToolsBar:: setRuber()
+{
+    isRuber = true;
+}
+/*void ToolsBar:: selectRuber(bool checked)
 {
     if(checked)
     {
@@ -34,7 +43,7 @@ void ToolsBar:: selectRuber(bool checked)
         qDebug()<<"Убрали ластик";
         isRuber = false;
     }
-}
+}*/
 
 QColor ToolsBar:: getColor()
 {

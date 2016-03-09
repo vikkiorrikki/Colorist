@@ -23,7 +23,9 @@ signals:
 
 public slots:   
     void changeWidth(int index);
-    void selectRuber(bool checked);
+    void setBrush();
+    void setRuber();
+    //void selectRuber(bool checked);
 };
 
 #endif // TOOLSBAR_H
