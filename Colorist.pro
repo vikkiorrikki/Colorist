@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,3 +25,6 @@ FORMS    += widget.ui
 
 RESOURCES += \
     test.qrc
+
+DISTFILES += \
+    ../build-Colorist-Desktop_Qt_5_5_1_MinGW_32bit-Debug/debug/levels.xml

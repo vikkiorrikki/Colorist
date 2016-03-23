@@ -10,6 +10,11 @@
 #include "toolsbar.h"
 #include "paintscene.h"
 #include <QResizeEvent>
+#include <QFileDialog>
+#include <QXmlStreamReader>
+#include <QtXml/QtXml>
+#include <QtGui>
+
 namespace Ui {
 class Widget;
 }
@@ -21,18 +26,25 @@ class Widget : public QWidget
 public:
     explicit Widget(QWidget *parent = 0);
     void resizeEvent(QResizeEvent *event);
+    void parseXML(const QDomNode xmlNode);
     ~Widget();
 
 private slots:
     void selectColor();
-    //void slotTimer();
+    void savePic();
+
+
+    void on_btnStart_clicked();
+
+    void on_btnMenu_clicked();
 
 private:
     Ui::Widget *ui;
     ToolsBar *tool;
-    //QTimer *timer;
+    QMap<QString, QMap<QString, QList<QString>* >* > *levels;
+
     paintScene *scene;
-    //void resizeEvent(QResizeEvent * event);
+
 };
 
 #endif // WIDGET_H
