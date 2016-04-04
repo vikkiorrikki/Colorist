@@ -1,74 +1,45 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <levels>
-    <theme title="theme1">
+    <theme title="Для мальчиков">
         <complexity id ="1">
-            <level name="pic11" file="pic1.jpg"/>
-            <level name="pic12" file="pic2.jpg"/>
+            <level name="pic11" file="boy1.png"/>
+            <level name="pic12" file="boy2.png"/>
         </complexity>
         <complexity id = "2">
-            <level name="pic13" file="pic3.jpg"/>
-            <level name="pic14" file="pic4.jpg"/>
-            <level name="pic15" file="pic5.jpg"/>
-            <level name="pic16" file="pic6.jpg"/>
+            <level name="pic11" file="boy1.png"/>
+            <level name="pic12" file="boy2.png"/>
         </complexity>
         <complexity id = "3">
-            <level name="pic17" file="pic7.jpg"/>
-            <level name="pic18" file="pic8.jpg"/>
-            <level name="pic19" file="pic9.jpg"/>
+            <level name="pic11" file="boy1.png"/>
+            <level name="pic12" file="boy2.png"/>
         </complexity>
     </theme>
-
-    <theme title="theme2">
+    <theme title="Для девочек">
         <complexity id ="1">
-            <level name="pic21" file="pic1.jpg"/>
-            <level name="pic22" file="pic2.jpg"/>
+            <level name="pic21" file="girl1.png"/>
+            <level name="pic22" file="girl2.png"/>
         </complexity>
         <complexity id = "2">
-            <level name="pic23" file="pic3.jpg"/>
-            <level name="pic24" file="pic4.jpg"/>
-            <level name="pic25" file="pic5.jpg"/>
-            <level name="pic26" file="pic6.jpg"/>
+            <level name="pic21" file="girl1.png"/>
+            <level name="pic22" file="girl2.png"/>
         </complexity>
         <complexity id = "3">
-            <level name="pic27" file="pic7.jpg"/>
-            <level name="pic28" file="pic8.jpg"/>
-            <level name="pic29" file="pic9.jpg"/>
+            <level name="pic21" file="girl1.png"/>
+            <level name="pic22" file="girl2.png"/>
         </complexity>
     </theme>
-
-    <theme title="theme3">
+    <theme title="Мультики">
         <complexity id ="1">
-            <level name="pic31" file="pic1.jpg"/>
-            <level name="pic32" file="pic2.jpg"/>
+            <level name="pic31" file="mult1.png"/>
+            <level name="pic32" file="mult2.png"/>
         </complexity>
         <complexity id = "2">
-            <level name="pic33" file="pic3.jpg"/>
-            <level name="pic34" file="pic4.jpg"/>
-            <level name="pic35" file="pic5.jpg"/>
-            <level name="pic36" file="pic6.jpg"/>
+            <level name="pic31" file="mult1.png"/>
+            <level name="pic32" file="mult2.png"/>
         </complexity>
         <complexity id = "3">
-            <level name="pic37" file="pic7.jpg"/>
-            <level name="pic38" file="pic8.jpg"/>
-            <level name="pic39" file="pic9.jpg"/>
-        </complexity>
-    </theme>
-
-    <theme title="theme4">
-        <complexity id ="1">
-            <level name="pic1" file="pic1.jpg"/>
-            <level name="pic2" file="pic2.jpg"/>
-        </complexity>
-        <complexity id = "2">
-            <level name="pic3" file="pic3.jpg"/>
-            <level name="pic4" file="pic4.jpg"/>
-            <level name="pic5" file="pic5.jpg"/>
-            <level name="pic6" file="pic6.jpg"/>
-        </complexity>
-        <complexity id = "3">
-            <level name="pic7" file="pic7.jpg"/>
-            <level name="pic8" file="pic8.jpg"/>
-            <level name="pic9" file="pic9.jpg"/>
+            <level name="pic31" file="mult1.png"/>
+            <level name="pic32" file="mult2.png"/>
         </complexity>
     </theme>
 </levels>
