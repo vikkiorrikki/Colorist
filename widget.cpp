@@ -14,7 +14,7 @@ Widget::Widget(QWidget *parent) :
     tool = new ToolsBar();
     ui->graphicsView->setAlignment(Qt::AlignTop | Qt::AlignLeft);
     ui->graphicsView_2->setAlignment(Qt::AlignTop | Qt::AlignLeft);
-    ui->graphicsView_2->setSceneRect(0, 0, 600, 800);
+    //ui->graphicsView_2->setSceneRect(0, 0, 600, 800);
 
     QGraphicsScene *leftScene = new QGraphicsScene();
     scene = new paintScene(ui->graphicsView_2->rect(), ui->graphicsView_2);
@@ -45,8 +45,8 @@ Widget::Widget(QWidget *parent) :
             tool, SLOT(setBrush()));
     connect(ui->btnSetRuber, SIGNAL(clicked()),
             tool, SLOT(setRuber()));
-    connect(ui->btnFinish, SIGNAL(clicked()),
-            this, SLOT(savePic()));
+    /*connect(ui->btnFinish, SIGNAL(clicked()),
+            this, SLOT(on_btnFinish_clicked()));*/
 
 
 }
@@ -63,10 +63,12 @@ void Widget:: resizeEvent(QResizeEvent *)
                 ui->graphicsView_2->geometry().height(), Qt::IgnoreAspectRatio));
 
 }
+
 Widget::~Widget()
 {
     delete ui;
 }
+
 void Widget:: savePic()
 {
     QString fileName= QFileDialog::getSaveFileName(this, "Save image", QCoreApplication::applicationDirPath(), "BMP Files (*.bmp);;JPEG (*.JPEG);;PNG (*.png)" );
@@ -75,6 +77,25 @@ void Widget:: savePic()
             QPixmap pixMap = this->ui->graphicsView_2->grab();
             pixMap.save(fileName);
         }
+}
+
+void Widget::loadLevel()
+{
+    int theme = ui->listWidget->currentRow();
+    QString str =  ui->listWidget->item(theme)->text();
+    int val = ui->sldDificult->value();
+    ui->graphicsView->scene()->setBackgroundBrush(QPixmap(qApp->applicationDirPath()+
+                                                 "/"+
+                                                 levels->value(str)->value(QString::number(val))->at(current_level))
+            .scaled(
+                            ui->graphicsView->geometry().width(),
+                            ui->graphicsView->geometry().height(), Qt::IgnoreAspectRatio));
+   scene->setForegroundBrush(QPixmap(qApp->applicationDirPath()+
+                                                 "/templ_"+
+                                                 levels->value(str)->value(QString::number(val))->at(current_level))
+                             .scaled(
+                                             ui->graphicsView_2->geometry().width(),
+                                             ui->graphicsView_2->geometry().height(), Qt::IgnoreAspectRatio));
 }
 
 void Widget::selectColor()
@@ -128,39 +149,15 @@ void Widget::parseXML(const QDomNode node)
      }
 }
 
-
-
-
-
-
 void Widget::on_btnStart_clicked()
 {
     ui->stackedWidget->setCurrentIndex(2);
-    ui->stackedWidget->setCurrentIndex(0);
+    current_level = 0;
     this->resizeEvent(NULL);
     int theme = ui->listWidget->currentRow();
     QString str =  ui->listWidget->item(theme)->text();
     int val = ui->sldDificult->value();
-    qDebug() << qApp->applicationDirPath()+
-                "/"+
-                levels->value(str)->value(QString::number(val))->at(0);
-    ui->graphicsView->scene()->setBackgroundBrush(QPixmap(qApp->applicationDirPath()+
-                                                 "/templ_"+
-                                                 levels->value(str)->value(QString::number(val))->at(0))
-            .scaled(
-                            ui->graphicsView->geometry().width(),
-                            ui->graphicsView->geometry().height(), Qt::IgnoreAspectRatio));
-    qDebug() << ui->graphicsView_2->geometry().width();
-    qDebug() << ui->graphicsView_2->geometry().height();
-   scene->setForegroundBrush(QPixmap(qApp->applicationDirPath()+
-                                                 "/templ_"+
-                                                 levels->value(str)->value(QString::number(val))->at(0))
-                             .scaled(
-                                             ui->graphicsView_2->geometry().width(),
-                                             ui->graphicsView_2->geometry().height(), Qt::IgnoreAspectRatio));
-
-    ui->stackedWidget->setCurrentIndex(2);
-
+    loadLevel();
 }
 
 void Widget::on_btnMenu_clicked()
@@ -174,4 +171,63 @@ void Widget::on_btnMenu_clicked()
     int ret = msg.exec();
     if( ret == QMessageBox::Cancel) return;
     ui->stackedWidget->setCurrentIndex(0);
+}
+
+void Widget::on_btnRepeat_clicked()
+{
+    ui->graphicsView_2->scene()->clear();
+}
+
+int Widget::getResult()
+{
+    QImage leftScene, rightScene;
+    int count = 0;
+
+    leftScene  = ui->graphicsView->grab().toImage();
+    rightScene = ui->graphicsView_2->grab().toImage();
+
+    for(int y = 0; y < leftScene.height(); y++)
+    {
+        for(int x = 0; x < leftScene.width(); x++)
+        {
+            if(leftScene.pixel(x, y) == rightScene.pixel(x, y))
+            {
+                count++;
+            }
+        }
+    }
+
+
+    return 100 * count/(leftScene.height()* leftScene.width());
+}
+
+void Widget::on_btnFinish_clicked()
+{
+    //qDebug()<< QString::number(getResult());
+    current_level++;
+    //
+    int theme = ui->listWidget->currentRow();
+    QString str =  ui->listWidget->item(theme)->text();
+    int val = ui->sldDificult->value();
+    //
+    if(current_level >= levels->value(str)->value(QString::number(val))->size())
+    {
+        //current_level = 0;
+        QMessageBox msg;
+        msg.setText("Вы завершили эту тему!\nПоздравляем!\nПопробуйте другие темы :)");
+        msg.setStandardButtons(QMessageBox::Ok);
+        msg.setDefaultButton(QMessageBox::Ok);
+        int ret = msg.exec();
+        ui->stackedWidget->setCurrentIndex(0);
+    }
+    else
+    {
+        loadLevel();
+        ui->graphicsView_2->scene()->clear();
+    }
+}
+
+void Widget::on_btnSavePic_clicked()
+{
+    savePic();
 }

@@ -38,12 +38,20 @@ private slots:
 
     void on_btnMenu_clicked();
 
+    void on_btnRepeat_clicked();
+
+    void on_btnFinish_clicked();
+
+    void on_btnSavePic_clicked();
+
 private:
     Ui::Widget *ui;
     ToolsBar *tool;
     QMap<QString, QMap<QString, QList<QString>* >* > *levels;
-
+    int current_level;
     paintScene *scene;
+    void loadLevel();
+    int getResult();
 
 };
 
