@@ -23,8 +23,7 @@ HEADERS  += widget.h \
 
 FORMS    += widget.ui
 
-RESOURCES += \
-    test.qrc
+RESOURCES +=
 
 DISTFILES += \
     ../build-Colorist-Desktop_Qt_5_5_1_MinGW_32bit-Debug/debug/levels.xml
