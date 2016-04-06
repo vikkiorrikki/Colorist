@@ -14,16 +14,12 @@ Widget::Widget(QWidget *parent) :
     tool = new ToolsBar();
     ui->graphicsView->setAlignment(Qt::AlignTop | Qt::AlignLeft);
     ui->graphicsView_2->setAlignment(Qt::AlignTop | Qt::AlignLeft);
-    //ui->graphicsView_2->setSceneRect(0, 0, 600, 800);
 
     QGraphicsScene *leftScene = new QGraphicsScene();
     scene = new paintScene(ui->graphicsView_2->rect(), ui->graphicsView_2);
     scene->setBrush(tool);
     ui->graphicsView->setScene(leftScene);
     ui->graphicsView_2->setScene(scene);
-
-    QString qwer = "qweqweq";
-    qDebug() << qwer;
 
     QDomDocument domDoc;
     QFile        file(qApp->applicationDirPath()+"/levels.xml");
@@ -36,7 +32,6 @@ Widget::Widget(QWidget *parent) :
         file.close();
     }
 
-
     connect(ui->btnColor, SIGNAL(clicked()),
             this, SLOT(selectColor()));
     connect(ui->cmbWidth, SIGNAL(currentIndexChanged(int)),
@@ -45,9 +40,6 @@ Widget::Widget(QWidget *parent) :
             tool, SLOT(setBrush()));
     connect(ui->btnSetRuber, SIGNAL(clicked()),
             tool, SLOT(setRuber()));
-    /*connect(ui->btnFinish, SIGNAL(clicked()),
-            this, SLOT(on_btnFinish_clicked()));*/
-
 
 }
 void Widget:: resizeEvent(QResizeEvent *)
@@ -154,9 +146,6 @@ void Widget::on_btnStart_clicked()
     ui->stackedWidget->setCurrentIndex(2);
     current_level = 0;
     this->resizeEvent(NULL);
-    int theme = ui->listWidget->currentRow();
-    QString str =  ui->listWidget->item(theme)->text();
-    int val = ui->sldDificult->value();
     loadLevel();
 }
 
@@ -203,21 +192,24 @@ int Widget::getResult()
 
 void Widget::on_btnFinish_clicked()
 {
-    //qDebug()<< QString::number(getResult());
+    QMessageBox res;
+    res.setText("Ваш результат: "+QString::number(getResult())+"% \n\n");
+    res.setStandardButtons(QMessageBox::Ok);
+    res.setDefaultButton(QMessageBox::Ok);
+    res.exec();
     current_level++;
-    //
+
     int theme = ui->listWidget->currentRow();
     QString str =  ui->listWidget->item(theme)->text();
     int val = ui->sldDificult->value();
-    //
+
     if(current_level >= levels->value(str)->value(QString::number(val))->size())
     {
-        //current_level = 0;
         QMessageBox msg;
         msg.setText("Вы завершили эту тему!\nПоздравляем!\nПопробуйте другие темы :)");
         msg.setStandardButtons(QMessageBox::Ok);
         msg.setDefaultButton(QMessageBox::Ok);
-        int ret = msg.exec();
+        msg.exec();
         ui->stackedWidget->setCurrentIndex(0);
     }
     else
